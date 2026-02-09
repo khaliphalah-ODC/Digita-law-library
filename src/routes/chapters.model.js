@@ -6,8 +6,8 @@ import {
   updateChapter,
   deleteChapter
 } from '../controller/chapters.controller.js';
-import {authMiddleware }from '../middleware/auth.middleware.js';
 import { apiKeyMiddleware } from '../middleware/apiKey.middleware.js';
+import {authMiddleware }from '../middleware/auth.middleware.js';
 
 const chapterRouter = express.Router();
 

@@ -6,7 +6,7 @@ import {
   updateBook,
   deleteBook
 } from '../controller/books.controller.js';
-import { apiKeyMiddleware } from '../middleware/ apiKey.middleware.js';
+import { apiKeyMiddleware } from '../middleware/apiKey.middleware.js';
 import {authMiddleware} from '../middleware/auth.middleware.js'
 
 const booksRouter = express.Router();

@@ -1,4 +1,4 @@
-export const apiKeyMiddleware = (req, res, next) => {
+ export const apiKeyMiddleware = (req, res, next) => {
   const apiKey = req.headers['x-api-key'];
 
   if (!apiKey) {

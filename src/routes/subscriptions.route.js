@@ -5,8 +5,9 @@ import {
   getSubscriptionById,
   cancelSubscription
 } from '../controller/subscriptions.controller.js';
-import {authMiddleware} from '../middleware/auth.middleware.js'
 import { apiKeyMiddleware } from '../middleware/apiKey.middleware.js';
+import {authMiddleware} from '../middleware/auth.middleware.js'
+
 
 const subscriptionRouter = express.Router();
 

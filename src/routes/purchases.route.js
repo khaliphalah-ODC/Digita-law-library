@@ -5,8 +5,9 @@ import {
   getPurchaseById,
   deletePurchase
 } from '../controller/purchases.controller.js';
-import { authMiddleware } from '../middleware/auth.middleware.js';
 import { apiKeyMiddleware } from '../middleware/apiKey.middleware.js';
+import { authMiddleware } from '../middleware/auth.middleware.js';
+
 
 const purchasesRouter = express.Router();
 
