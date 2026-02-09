@@ -6,14 +6,14 @@ import {
   cancelSubscription
 } from '../controller/subscriptions.controller.js';
 import {authMiddleware} from '../middleware/auth.middleware.js'
+import { apiKeyMiddleware } from '../middleware/apiKey.middleware.js';
 
 const subscriptionRouter = express.Router();
 
-subscriptionRouter.post('/', authMiddleware, createSubscription);
-subscriptionRouter.get('/user/:user_id',authMiddleware, getSubscriptionsByUser);
-subscriptionRouter.get('/:id',authMiddleware, getSubscriptionById);
+subscriptionRouter.post('/',apiKeyMiddleware, authMiddleware, createSubscription);
+subscriptionRouter.get('/user/:user_id',apiKeyMiddleware, authMiddleware, getSubscriptionsByUser);
+subscriptionRouter.get('/:id',apiKeyMiddleware, authMiddleware, getSubscriptionById);
 
 //cancel instead of delete 
-subscriptionRouter.patch('/:id/cancel', authMiddleware, cancelSubscription);
-
+subscriptionRouter.patch('/:id/cancel', apiKeyMiddleware, authMiddleware, cancelSubscription);
 export default subscriptionRouter;

@@ -83,7 +83,7 @@ export const signupUser = async (req, res) => {
 
           res.status(201).json({
             message: 'User created successfully',
-            data: { id: this.lastID, full_name, email, role: role,  password_hash: user.password_hash || 'student' }
+            data: { id: this.lastID, full_name, email, role: role || 'student' }
           });
         }
       );

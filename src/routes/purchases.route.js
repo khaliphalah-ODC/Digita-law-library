@@ -6,13 +6,14 @@ import {
   deletePurchase
 } from '../controller/purchases.controller.js';
 import { authMiddleware } from '../middleware/auth.middleware.js';
+import { apiKeyMiddleware } from '../middleware/apiKey.middleware.js';
 
 const purchasesRouter = express.Router();
 
 
-purchasesRouter.post('/',authMiddleware, createPurchase);
-purchasesRouter.get('/user/:user_id', getPurchasesByUser);
-purchasesRouter.get('/:id', getPurchaseById);
-purchasesRouter.delete('/:id', authMiddleware, deletePurchase);
+purchasesRouter.post('/',apiKeyMiddleware, authMiddleware, createPurchase);
+purchasesRouter.get('/user/:user_id', apiKeyMiddleware, getPurchasesByUser);
+purchasesRouter.get('/:id', apiKeyMiddleware, getPurchaseById);
+purchasesRouter.delete('/:id', apiKeyMiddleware, authMiddleware, deletePurchase);
 
 export default purchasesRouter;
